@@ -1,6 +1,9 @@
 package org.hrd.kotlin.kotlin.models;
 
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.sql.Date;
 
 /**
@@ -12,13 +15,21 @@ public class User {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @JsonProperty("USER_ID")
     private int userId;
+    @JsonProperty("USER_NAME")
     private String userName;
-    private String useEmail;
+    @JsonProperty("USER_EMAIL")
+    private String userEmail;
+    @JsonProperty("USER_DOB")
     private Date userDob;
+    @JsonProperty("USER_PASSWORD")
     private String userPassword;
+    @JsonProperty("USER_HASH")
     private String userHash;
+    @JsonProperty("USER_GENDER")
     private String userGender;
+    @JsonProperty("USER_IMAGE_PROFILE")
     private String userImageProfile;
 
     public User(){}
@@ -38,12 +49,12 @@ public class User {
         this.userName = userName;
     }
 
-    public String getUseEmail() {
-        return useEmail;
+    public String getUserEmail() {
+        return userEmail;
     }
 
-    public void setUseEmail(String useEmail) {
-        this.useEmail = useEmail;
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
     }
 
     public Date getUserDob() {
